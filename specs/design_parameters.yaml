@@ -1,0 +1,30 @@
+# 一次資料に基づく試験仕様。改訂時は資料を再確認してADRと検証結果を残す。
+parameters:
+  - id: heishu_exam_subject_counts
+    value: { law: 10, combustion: 5, properties: 10 }
+    status: confirmed
+    source: https://www.shoubo-shiken.or.jp/kikenbutsu/annai/subject.html
+    checked_at: 2026-09-12
+    sample_size: 1
+    revise_when: 公式試験仕様の改定時
+  - id: heishu_exam_duration_minutes
+    value: 75
+    status: confirmed
+    source: https://www.shoubo-shiken.or.jp/kikenbutsu/annai/way.html
+    checked_at: 2026-09-12
+    sample_size: 1
+    revise_when: 公式試験仕様の改定時
+  - id: heishu_choice_count
+    value: 4
+    status: confirmed
+    source: https://www.shoubo-shiken.or.jp/kikenbutsu/annai/way.html
+    checked_at: 2026-09-12
+    sample_size: 1
+    revise_when: 公式試験仕様の改定時
+  - id: heishu_subject_pass_ratio
+    value: 0.6
+    status: confirmed
+    source: https://www.shoubo-shiken.or.jp/branch/47okinawa/content/r8-k-panfu.pdf
+    checked_at: 2026-09-12
+    sample_size: 1
+    revise_when: 公式合格基準の改定時
