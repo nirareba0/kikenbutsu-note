@@ -102,7 +102,7 @@ export function HomeView({
           <div className="hidden md:flex justify-center">
             <div className="relative overflow-hidden rounded-2xl border-4 border-white/30 shadow-xl max-w-[280px]">
               <img
-                src="/assets/hero_banner.jpg"
+                src="./assets/hero_banner.jpg"
                 alt="勉強する高校生"
                 className="h-full w-full object-cover"
               />
@@ -117,7 +117,7 @@ export function HomeView({
         <div className="rounded-2xl border-2 border-slate-200/80 bg-white p-4 sm:p-5 shadow-xs flex items-center gap-4">
           <div className="relative shrink-0">
             <img
-              src="/assets/mascot.jpg"
+              src="./assets/mascot.jpg"
               alt="ヒナタ先輩"
               className="h-16 w-16 rounded-2xl border-2 border-amber-300 object-cover shadow-xs"
             />

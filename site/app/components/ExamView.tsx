@@ -126,7 +126,7 @@ export function ExamView({
             <div className="flex flex-col items-center space-y-2">
               <div className="relative">
                 <img
-                  src="/assets/trophy.jpg"
+                  src="./assets/trophy.jpg"
                   alt="合格トロフィー"
                   className="h-28 w-28 object-contain drop-shadow-md animate-bounce"
                 />
@@ -144,7 +144,7 @@ export function ExamView({
           ) : (
             <div className="flex flex-col items-center space-y-2">
               <img
-                src="/assets/mascot.jpg"
+                src="./assets/mascot.jpg"
                 alt="ヒナタ先輩"
                 className="h-20 w-20 rounded-2xl border-2 border-blue-400 object-cover shadow-xs"
               />
@@ -363,7 +363,7 @@ export function ExamView({
           <div className="text-center space-y-3">
             <div className="flex justify-center">
               <img
-                src="/assets/mascot.jpg"
+                src="./assets/mascot.jpg"
                 alt="ヒナタ先輩"
                 className="h-20 w-20 rounded-2xl border-2 border-amber-300 object-cover shadow-xs"
               />

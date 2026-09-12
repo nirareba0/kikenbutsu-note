@@ -40,7 +40,7 @@ export function HeaderNav({ currentTab, onTabChange, storageWarning, levelInfo }
           >
             <div className="relative">
               <img
-                src="/assets/mascot.jpg"
+                src="./assets/mascot.jpg"
                 alt="危険物ノート"
                 className="h-10 w-10 rounded-xl border-2 border-amber-400 object-cover shadow-xs"
               />

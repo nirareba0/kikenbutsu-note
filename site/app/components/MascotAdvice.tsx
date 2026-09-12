@@ -54,7 +54,7 @@ export function MascotAdvice({ lessonId }: MascotAdviceProps) {
       {/* Mascot Icon */}
       <div className="relative shrink-0">
         <img
-          src="/assets/mascot.jpg"
+          src="./assets/mascot.jpg"
           alt="ヒナタ先輩"
           className="h-14 w-14 rounded-2xl border-2 border-white object-cover shadow-sm ring-2 ring-amber-300/50"
         />
