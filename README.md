@@ -62,15 +62,18 @@ npm run build
 
 ## 🌐 Web公開方法（GitHub Pages & クラウドホスティング）
 
-### 1. GitHub Pages で公開（一番簡単・追加登録不要！）
-静的Webサイト用ブランチ `gh-pages` がプッシュされているため、GitHubのリポジトリ設定を1箇所変えるだけで即座に公開できます。
+### 1. GitHub Pages での公開（公開済み🎉）
+本リポジトリは GitHub Pages（`gh-pages` ブランチ）によりインターネット上に公開されています。
 
-1. GitHub リポジトリ（[https://github.com/nirareba0/kikenbutsu-note](https://github.com/nirareba0/kikenbutsu-note)）を開く
-2. 上部メニューの **「Settings」**（設定）タブをクリック
-3. 左サイドバーの **「Pages」** を選択
-4. **「Build and deployment」>「Source」** で **「Deploy from a branch」** を選択
-5. **「Branch」** で **`gh-pages`** / **`/ (root)`** を選択し、**「Save」** をクリック
-6. 約1分で **`https://nirareba0.github.io/kikenbutsu-note/`** に全世界からアクセスできるようになります！
+* **本番公開URL**: **[https://nirareba0.github.io/kikenbutsu-note/](https://nirareba0.github.io/kikenbutsu-note/)**
+* スマホやPCのブラウザから上記URLを開くだけで、インストールやアカウント登録不要で今すぐ学習できます！
+
+**今後の更新方法**:
+サイトの内容を修正した後は、以下のコマンド1発で最新版が GitHub Pages に反映されます：
+```bash
+cd site
+npm run deploy:pages
+```
 
 ### 2. Vercel / Cloudflare Pages で公開する場合
 Vercel や Cloudflare と連携する場合：

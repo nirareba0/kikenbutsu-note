@@ -9,6 +9,7 @@
     "dev": "vinext dev",
     "build": "vinext build",
     "build:static": "vite build --config vite.static.config.ts",
+    "deploy:pages": "npm run build:static && cp dist-static/index.html dist-static/404.html && touch dist-static/.nojekyll && cd dist-static && git init -b gh-pages && git add -A && git commit -m 'deploy: GitHub Pages release' && git remote add origin https://github.com/nirareba0/kikenbutsu-note.git && git push -f origin gh-pages && rm -rf .git",
     "start": "wrangler dev --config dist/server/wrangler.json",
     "lint": "oxlint",
     "format": "oxfmt",
