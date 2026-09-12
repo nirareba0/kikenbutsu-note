@@ -16,6 +16,7 @@ import {
   ExternalLink,
   ChevronLeft,
   ChevronRight,
+  ChevronDown,
   CheckSquare,
 } from 'lucide-react';
 
@@ -43,6 +44,8 @@ export function TextbookView({
   const nextLesson =
     currentLessonIndex < LESSONS.length - 1 ? LESSONS[currentLessonIndex + 1] : null;
 
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
+
   const isCompleted = completedLessonIds.includes(currentLesson.id);
 
   // この単元に関連する問題
@@ -56,9 +59,90 @@ export function TextbookView({
   ];
 
   return (
-    <div className="py-6 grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-8 items-start">
-      {/* サイド目次（PC向け & モバイル上部） */}
-      <aside className="rounded-xl border border-[#d4e0f0] bg-white shadow-xs p-4 sticky top-20">
+    <div className="py-4 sm:py-6 space-y-4 lg:space-y-0 lg:grid lg:grid-cols-[300px_1fr] lg:gap-8 items-start">
+      {/* モバイル向け：折りたたみ式コンパクト目次セレクター（スマホの邪魔をしない） */}
+      <div className="lg:hidden rounded-2xl border-2 border-slate-200 bg-white p-3 shadow-xs">
+        <div className="flex items-center justify-between gap-2">
+          <div className="flex items-center gap-2 overflow-hidden">
+            <span className="shrink-0 rounded-lg bg-blue-600 px-2 py-1 text-xs font-black text-white">
+              第{currentLesson.order}単元
+            </span>
+            <span className="truncate text-xs sm:text-sm font-bold text-slate-800">
+              {currentLesson.title}
+            </span>
+          </div>
+
+          <button
+            type="button"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="shrink-0 inline-flex items-center gap-1.5 rounded-xl border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-bold text-slate-700 hover:bg-slate-100 min-h-[40px] transition-colors"
+          >
+            <span>{isMobileMenuOpen ? '目次を閉じる' : '目次を開く'}</span>
+            <ChevronDown
+              className={`w-4 h-4 transition-transform duration-200 ${
+                isMobileMenuOpen ? 'rotate-180' : ''
+              }`}
+            />
+          </button>
+        </div>
+
+        {/* タップ時のみ展開される単元一覧 */}
+        {isMobileMenuOpen && (
+          <div className="mt-3 pt-3 border-t border-slate-100 space-y-4 max-h-[60vh] overflow-y-auto">
+            <div className="flex items-center justify-between px-1 text-xs text-slate-500 font-bold">
+              <span>学習する単元をタップして選択</span>
+              <span>{completedLessonIds.length} / {LESSONS.length} 読了</span>
+            </div>
+            {subjects.map((subj) => {
+              const subjLessons = LESSONS.filter((l) => l.subjectId === subj.id);
+              return (
+                <div key={subj.id} className="space-y-1">
+                  <span className="text-[11px] font-bold text-slate-500 px-2 block">
+                    {subj.name}
+                  </span>
+                  <div className="space-y-1">
+                    {subjLessons.map((l) => {
+                      const isSelected = l.id === currentLesson.id;
+                      const isDone = completedLessonIds.includes(l.id);
+                      return (
+                        <button
+                          key={l.id}
+                          type="button"
+                          onClick={() => {
+                            onSelectLesson(l.id);
+                            setIsMobileMenuOpen(false); // 選択したら自動で閉じて本文に集中！
+                          }}
+                          className={`w-full text-left px-3 py-2.5 rounded-xl text-xs font-bold flex items-center justify-between transition-colors min-h-[44px] ${
+                            isSelected
+                              ? 'bg-blue-600 text-white shadow-xs'
+                              : 'text-slate-800 hover:bg-slate-100 bg-slate-50'
+                          }`}
+                        >
+                          <span className="truncate pr-2">
+                            {l.order}. {l.title}
+                          </span>
+                          {isDone && (
+                            <span
+                              className={`shrink-0 text-xs font-black ${
+                                isSelected ? 'text-white' : 'text-blue-600'
+                              }`}
+                            >
+                              ✓ 読了
+                            </span>
+                          )}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        )}
+      </div>
+
+      {/* PC向け：常時表示サイドバー目次（画面幅1024px以上） */}
+      <aside className="hidden lg:block rounded-xl border border-[#d4e0f0] bg-white shadow-xs p-4 sticky top-20">
         <h3 className="text-sm font-bold text-[#173052] pb-3 border-b border-[#edf2f9] flex items-center justify-between">
           <span>教科書 目次</span>
           <span className="text-xs text-[#4a5d78] font-normal">
