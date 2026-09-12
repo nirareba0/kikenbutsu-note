@@ -8,5 +8,6 @@
 - 高校生向けにビジュアルUI/UXを大幅刷新：ヒーローイラスト・マスコット先輩アドバイス・全9単元の図解カード・レベル&EXP称号バッジを新設。
 - GitHubリポジトリ（nirareba0/kikenbutsu-note）への初回プッシュ完了（P0-03）。
 - GitHub Pages（https://nirareba0.github.io/kikenbutsu-note/）でのWeb本番公開を完了。
+- スマホ表示時の教科書目次を折りたたみ式コンパクトバーに改修し、本文が即座に読めるようUXを改善。
 
 
