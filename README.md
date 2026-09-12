@@ -60,12 +60,22 @@ npm run build
 
 ---
 
-## ☁️ Vercel / Cloudflare Pages へのデプロイ
+## 🌐 Web公開方法（GitHub Pages & クラウドホスティング）
 
-このリポジトリを Vercel または Cloudflare Pages に連携して公開する場合：
+### 1. GitHub Pages で公開（一番簡単・追加登録不要！）
+静的Webサイト用ブランチ `gh-pages` がプッシュされているため、GitHubのリポジトリ設定を1箇所変えるだけで即座に公開できます。
 
+1. GitHub リポジトリ（[https://github.com/nirareba0/kikenbutsu-note](https://github.com/nirareba0/kikenbutsu-note)）を開く
+2. 上部メニューの **「Settings」**（設定）タブをクリック
+3. 左サイドバーの **「Pages」** を選択
+4. **「Build and deployment」>「Source」** で **「Deploy from a branch」** を選択
+5. **「Branch」** で **`gh-pages`** / **`/ (root)`** を選択し、**「Save」** をクリック
+6. 約1分で **`https://nirareba0.github.io/kikenbutsu-note/`** に全世界からアクセスできるようになります！
+
+### 2. Vercel / Cloudflare Pages で公開する場合
+Vercel や Cloudflare と連携する場合：
 - **Root Directory**: `site`
 - **Build Command**: `npm run build`
 - **Output Directory**: `dist/client` (または自動検出)
 
-デプロイ完了後、発行されたURLにスマートフォンやPCからアクセスするだけで、どこからでも学習できます！
+
