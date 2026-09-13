@@ -219,13 +219,45 @@ export function LessonDiagram({ lessonId }: LessonDiagramProps) {
             </div>
           </div>
 
-          <div className="mt-3 rounded-lg bg-yellow-400/20 border border-yellow-400/60 p-2.5 flex items-center gap-2 text-xs font-bold text-slate-800">
-            <div className="flex h-6 w-6 items-center justify-center rounded bg-yellow-400 text-black font-black text-xs shrink-0">
-              危
-            </div>
-            <span>
-              危険物施設の目印：地色は「黄」、文字は「黒」で「危」と書かれた標識！
+          {/* 看板・掲示板の配色ルール（試験の超頻出！） */}
+          <div className="mt-3 rounded-xl bg-slate-50 border border-slate-200 p-3">
+            <span className="text-xs font-black text-slate-700 block mb-2">
+              🏷️【試験で狙われる】看板・掲示板の配色ルール一覧
             </span>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center text-xs font-bold">
+              {/* 施設標識 */}
+              <div className="rounded-lg bg-white border border-slate-300 p-2 shadow-2xs">
+                <span className="text-[10px] text-slate-500 block">施設標識</span>
+                <div className="mt-1 bg-white border border-slate-400 py-1 px-1.5 rounded text-black font-black text-[11px]">
+                  危険物取扱所
+                </div>
+                <span className="text-[9px] text-slate-600 block mt-1">白地に黒文字</span>
+              </div>
+              {/* 火気厳禁 */}
+              <div className="rounded-lg bg-red-50 border border-red-200 p-2 shadow-2xs">
+                <span className="text-[10px] text-red-600 block">防火標識</span>
+                <div className="mt-1 bg-red-600 py-1 px-1.5 rounded text-white font-black text-[11px]">
+                  火気厳禁
+                </div>
+                <span className="text-[9px] text-red-700 block mt-1">赤地に白文字</span>
+              </div>
+              {/* 給油中エンジン停止 */}
+              <div className="rounded-lg bg-yellow-50 border border-yellow-200 p-2 shadow-2xs">
+                <span className="text-[10px] text-yellow-700 block">スタンド注意</span>
+                <div className="mt-1 bg-yellow-400 py-1 px-1.5 rounded text-black font-black text-[11px]">
+                  給油中エンジン停止
+                </div>
+                <span className="text-[9px] text-yellow-800 block mt-1">黄地に黒文字</span>
+              </div>
+              {/* タンクローリー */}
+              <div className="rounded-lg bg-slate-100 border border-slate-300 p-2 shadow-2xs">
+                <span className="text-[10px] text-slate-600 block">移動タンク</span>
+                <div className="mt-1 bg-black py-1 px-1.5 rounded text-yellow-400 font-black text-[11px]">
+                  危
+                </div>
+                <span className="text-[9px] text-slate-700 block mt-1">黒地に黄文字</span>
+              </div>
+            </div>
           </div>
         </div>
       );

@@ -225,11 +225,17 @@ export function TextbookView({
 
         {/* 1. 導入 (Introduction) */}
         <section className="space-y-3">
-          <div className="flex items-center gap-2 text-base font-bold text-[#173052]">
-            <BookOpen className="w-5 h-5 text-[#245bdd]" />
-            <h3>1. 導入と全体像</h3>
+          <div className="flex items-center gap-2 text-base font-black text-slate-800">
+            <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-600 text-white text-xs font-black">
+              1
+            </span>
+            <BookOpen className="w-5 h-5 text-blue-600" />
+            <h3 className="text-lg">導入と身近なイメージ</h3>
+            <span className="text-xs bg-blue-100 text-blue-800 font-bold px-2 py-0.5 rounded-full">
+              まずはここから！
+            </span>
           </div>
-          <div className="rounded-xl bg-[#f8fafc] border border-[#d4e0f0] p-4 text-[#173052] text-base leading-relaxed whitespace-pre-line">
+          <div className="rounded-2xl bg-gradient-to-br from-blue-50/80 via-white to-slate-50 border-2 border-blue-200 p-5 text-slate-800 text-base leading-relaxed whitespace-pre-line shadow-2xs">
             {currentLesson.sections.introduction}
           </div>
         </section>
@@ -241,46 +247,63 @@ export function TextbookView({
         <MascotAdvice lessonId={currentLesson.id} />
 
         {/* 2. 理由・背景 (Reason) */}
-
         <section className="space-y-3">
-          <div className="flex items-center gap-2 text-base font-bold text-[#173052]">
-            <HelpCircle className="w-5 h-5 text-[#245bdd]" />
-            <h3>2. なぜそう決められているのか（理由・原理）</h3>
+          <div className="flex items-center gap-2 text-base font-black text-slate-800">
+            <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-indigo-600 text-white text-xs font-black">
+              2
+            </span>
+            <HelpCircle className="w-5 h-5 text-indigo-600" />
+            <h3 className="text-lg">なぜそう決まっているの？（理由と仕組み）</h3>
           </div>
-          <div className="text-[#173052] text-base leading-relaxed whitespace-pre-line pl-1">
+          <div className="rounded-2xl bg-white border-2 border-slate-200 p-5 text-slate-800 text-base leading-relaxed whitespace-pre-line shadow-2xs">
             {currentLesson.sections.reason}
           </div>
         </section>
 
         {/* 3. 具体例と実務基準 (Examples) */}
         <section className="space-y-3">
-          <div className="flex items-center gap-2 text-base font-bold text-[#173052]">
-            <Lightbulb className="w-5 h-5 text-[#245bdd]" />
-            <h3>3. 具体例と数値・実務上の基準</h3>
+          <div className="flex items-center gap-2 text-base font-black text-slate-800">
+            <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-emerald-600 text-white text-xs font-black">
+              3
+            </span>
+            <Lightbulb className="w-5 h-5 text-emerald-600" />
+            <h3 className="text-lg">具体例と覚えるべき基準・数値</h3>
+            <span className="text-xs bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded-full">
+              試験によく出る！
+            </span>
           </div>
-          <div className="rounded-lg bg-[#edf2f9]/60 border border-[#d4e0f0] p-4 text-[#173052] text-base leading-relaxed whitespace-pre-line font-mono sm:font-sans">
+          <div className="rounded-2xl bg-emerald-50/40 border-2 border-emerald-200/80 p-5 text-slate-800 text-base leading-relaxed whitespace-pre-line shadow-2xs">
             {currentLesson.sections.examples}
           </div>
         </section>
 
         {/* 4. 試験でのつまずきポイント (Pitfalls) */}
         <section className="space-y-3">
-          <div className="flex items-center gap-2 text-base font-bold text-[#d9383a]">
-            <AlertTriangle className="w-5 h-5 text-[#d9383a]" />
-            <h3>4. 試験でよくある「つまずき・誤認」パターン</h3>
+          <div className="flex items-center gap-2 text-base font-black text-rose-600">
+            <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-rose-600 text-white text-xs font-black">
+              4
+            </span>
+            <AlertTriangle className="w-5 h-5 text-rose-600" />
+            <h3 className="text-lg">ここが危ない！試験の超ひっかけ罠</h3>
+            <span className="text-xs bg-rose-100 text-rose-800 font-black px-2 py-0.5 rounded-full">
+              高校生が一番ハマる！
+            </span>
           </div>
-          <div className="rounded-lg bg-[#d9383a]/5 border border-[#d9383a]/30 p-4 text-[#173052] text-base leading-relaxed whitespace-pre-line">
+          <div className="rounded-2xl bg-rose-50/70 border-2 border-rose-300 p-5 text-slate-900 text-base leading-relaxed whitespace-pre-line shadow-2xs">
             {currentLesson.sections.pitfalls}
           </div>
         </section>
 
         {/* 5. 要点まとめ (Summary) */}
         <section className="space-y-3">
-          <div className="flex items-center gap-2 text-base font-bold text-[#173052]">
-            <CheckSquare className="w-5 h-5 text-[#245bdd]" />
-            <h3>5. 本単元の要点まとめ</h3>
+          <div className="flex items-center gap-2 text-base font-black text-slate-800">
+            <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-amber-500 text-white text-xs font-black">
+              5
+            </span>
+            <CheckSquare className="w-5 h-5 text-amber-600" />
+            <h3 className="text-lg">本単元のまとめ（暗記チェック）</h3>
           </div>
-          <div className="rounded-lg bg-[#f4c84b]/15 border border-[#f4c84b]/50 p-4 text-[#173052] text-base font-medium leading-relaxed whitespace-pre-line">
+          <div className="rounded-2xl bg-gradient-to-r from-amber-50 via-yellow-50 to-orange-50 border-2 border-amber-300 p-5 text-slate-900 text-base font-medium leading-relaxed whitespace-pre-line shadow-2xs">
             {currentLesson.sections.summary}
           </div>
         </section>
